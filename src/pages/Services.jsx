@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion';
 import axios from 'axios';
@@ -7,12 +7,16 @@ import axios from 'axios';
 
 const Services = () => {
  const[usluge, setUsluge] = useState([]);
-
+ 
+useEffect(()=>{ 
+  
  axios.get('/usluge')
  .then((response) => {
    setUsluge(response.data)
    console.log(response.data)
- }, [])
+ })
+
+}, [])
 
 
  function BasicExample() {

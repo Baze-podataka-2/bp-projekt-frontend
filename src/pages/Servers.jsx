@@ -9,16 +9,17 @@ import Card from 'react-bootstrap/Card';
 
 const Servers = () => {
 
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [server, setServer] = useState([]);
 
 
   const fetchServer = async () => {
     try {
-      const response = await axios.get(`posluzitelji/${input}`);
-      setServer(response.data);
-      console.log(input);
-      console.log(server);
+      const response = await axios.get(`/posluzitelji/${input}`);
+      setServer(response.data[0]);
+      console.log(input)
+      console.log(response.data);
+      console.log("radi se o serveru" + response.data[0].kategorija);
       
     } catch (error) {
       if(error) {
@@ -29,15 +30,16 @@ const Servers = () => {
   }
 
 
-  function BasicExample() {
-    return (
+  function ServerCard({ server }) {
+    
+    return (  
       <Card style={{ width: '18rem' }}>
         <Card.Body>
-          <Card.Title>{server.kategorija || 'Nema niceg'}</Card.Title>
+          <Card.Title>{server.kategorija || 'Nema nista za prikazati'}</Card.Title>
           <Card.Text>
-          {server.kategorija || 'Nema niceg'}
+          {server.naziv || 'Nema nista za prikazati'}
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">Vidi više</Button>
         </Card.Body>
       </Card>
     );
@@ -53,7 +55,7 @@ const Servers = () => {
     />
     <Button onClick={fetchServer}>Dohvati</Button>
     <Container>
-      <BasicExample></BasicExample>
+      <ServerCard server={server}/>
     </Container>
     </>
   )

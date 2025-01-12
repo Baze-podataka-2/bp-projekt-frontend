@@ -18,10 +18,10 @@ const App = () => {
       <Header />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='serveri' element={<Servers/>} />
-          <Route path='usluge' element={<Services/>} />
-          <Route path='oprema' element={<Equipments/>} />
-          <Route path='incidenti' element={<Incidents/>} />
+          <Route path='/serveri' element={<Servers/>} />
+          <Route path='/usluge' element={<Services/>} />
+          <Route path='/oprema' element={<Equipments/>} />
+          <Route path='/incidenti' element={<Incidents/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>
