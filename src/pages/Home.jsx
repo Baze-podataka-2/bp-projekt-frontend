@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import imageD from "../images/datacenter.webp"
+import { Link } from "react-router-dom"
 const Home = () => {
   return (
    <div>
@@ -15,9 +16,11 @@ const Home = () => {
               predstaviti implementaciju sustava koji omogućuje upravljanje i
               analizu podataka.
             </p>
+            <a href="#pregled">
             <Button variant="primary" size="lg">
               Pregled projekta
             </Button>
+            </a>
           </Col>
           <Col md={6}>
             <img
@@ -31,11 +34,11 @@ const Home = () => {
     </section>
 
     {/* Features Section */}
-    <section className="py-5">
+    <section className="py-5" id='pregled'>
       <Container>
         <h2 className="text-center mb-4">Ključne značajke projekta</h2>
         <Row className="text-center justify-content-between mt-5" >
-          <Col md={3} className='border shadow-sm py-5'>
+          <Col md={3} className='border rounded-3 shadow-sm py-5'>
             <h3>Prikaz poslužitelja</h3>
             <p>
               Omogućujemo unos, ažuriranje i brisanje podataka  o poslužiteljima na jednostavan
@@ -43,14 +46,14 @@ const Home = () => {
             </p>
             <Button>Vidi više</Button>
           </Col>
-          <Col md={3} className='border shadow-sm py-5 '>
+          <Col md={3} className='border rounded-3 shadow-sm py-5 '>
             <h3>Prikaz opreme</h3>
             <p>
                Unos izmjena i brisanje opreme iz baze podataka
             </p>
             <Button>Vidi više</Button>
           </Col>
-          <Col md={3} className='border shadow-sm py-5'>
+          <Col md={3} className='border rounded-3 shadow-sm py-5'>
             <h3>Prikaz usluga</h3>
             <p>
             Unos izmjena i brisanje usluga iz baze podataka
@@ -60,7 +63,7 @@ const Home = () => {
         </Row>
 
         <Row className="text-center justify-content-between mt-5">
-          <Col md={3} className='border shadow-sm py-5'>
+          <Col md={3} className='border rounded-3 shadow-sm py-5'>
             <h3>Prikaz incidenata</h3>
             <p>
               Omogućujemo unos, ažuriranje i brisanje podataka  o incidentima na jednostavan
@@ -68,14 +71,14 @@ const Home = () => {
             </p>
             <Button>Vidi više</Button>
           </Col>
-          <Col md={3} className='border shadow-sm py-5 '>
+          <Col md={3} className='border rounded-3 shadow-sm py-5 '>
             <h3>Prikaz računa prema klijentima</h3>
             <p>
                Unos izmjena i brisanje računa iz baze podataka
             </p>
             <Button>Vidi više</Button>
           </Col>
-          <Col md={3} className='border shadow-sm py-5'>
+          <Col md={3} className='border rounded-3 shadow-sm py-5'>
             <h3>Insert ideja</h3>
             <p>
            Lorem ipsum
