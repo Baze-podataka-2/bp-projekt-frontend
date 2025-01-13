@@ -34,26 +34,53 @@ const Home = () => {
     <section className="py-5">
       <Container>
         <h2 className="text-center mb-4">Ključne značajke projekta</h2>
-        <Row className="text-center">
-          <Col md={4}>
-            <h3>Upravljanje podacima</h3>
+        <Row className="text-center justify-content-between mt-5" >
+          <Col md={3} className='border shadow-sm py-5'>
+            <h3>Prikaz poslužitelja</h3>
             <p>
-              Omogućujemo unos, ažuriranje i brisanje podataka na jednostavan
-              i intuitivan način.
+              Omogućujemo unos, ažuriranje i brisanje podataka  o poslužiteljima na jednostavan
+              način.
             </p>
+            <Button>Vidi više</Button>
           </Col>
-          <Col md={4}>
-            <h3>Analitika</h3>
+          <Col md={3} className='border shadow-sm py-5 '>
+            <h3>Prikaz opreme</h3>
             <p>
-              Generiranje izvještaja i analiza podataka za podršku donošenju
-              odluka.
+               Unos izmjena i brisanje opreme iz baze podataka
             </p>
+            <Button>Vidi više</Button>
           </Col>
-          <Col md={4}>
-            <h3>Sigurnost</h3>
+          <Col md={3} className='border shadow-sm py-5'>
+            <h3>Prikaz usluga</h3>
             <p>
-              Podaci su zaštićeni kroz sustave autentifikacije i enkripcije.
+            Unos izmjena i brisanje usluga iz baze podataka
             </p>
+            <Button>Vidi više</Button>
+          </Col>
+        </Row>
+
+        <Row className="text-center justify-content-between mt-5">
+          <Col md={3} className='border shadow-sm py-5'>
+            <h3>Prikaz incidenata</h3>
+            <p>
+              Omogućujemo unos, ažuriranje i brisanje podataka  o incidentima na jednostavan
+              način.
+            </p>
+            <Button>Vidi više</Button>
+          </Col>
+          <Col md={3} className='border shadow-sm py-5 '>
+            <h3>Prikaz računa prema klijentima</h3>
+            <p>
+               Unos izmjena i brisanje računa iz baze podataka
+            </p>
+            <Button>Vidi više</Button>
+          </Col>
+          <Col md={3} className='border shadow-sm py-5'>
+            <h3>Insert ideja</h3>
+            <p>
+           Lorem ipsum
+            </p>
+            <Button>Vidi više</Button>
           </Col>
         </Row>
       </Container>
