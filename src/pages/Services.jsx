@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion';
 import axios from 'axios';
 import { BiTrash, BiEdit, BiBookOpen} from "react-icons/bi";
+import {Link } from "react-router-dom"
 
 
 const Services = () => {
@@ -27,14 +28,16 @@ useEffect(()=>{
         <Accordion.Body>
         <ul>
           {usluge.map((item) => 
-            <Row key={item.id} className="border border-secondary rounded shadow-sm py-2 my-2" >
+            <Row key={item.id_usluga} className="border border-secondary rounded shadow-sm py-2 my-2" >
               <Col md={8}>
               Vrsta usluge - {item.vrsta} - Cijena usluge - {item.cijena}
               </Col>
               <Col md={4}>
               <BiTrash style={{ fontSize: "20px", color: "red", marginRight: "10px"}}/>
               <BiEdit style={{ fontSize: "20px", color: "black", marginRight: "10px" }}/>
-              <BiBookOpen style={{ fontSize: "20px", color: "black" }}/>
+              <Link to={`/usluge/${item.id_usluga}`} style={{pointerEvents: "auto"}}>
+              <BiBookOpen style={{ fontSize: "20px", color: "black"}}/>
+              </Link>
               </Col>
               </Row>
           )}
