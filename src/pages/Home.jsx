@@ -44,46 +44,58 @@ const Home = () => {
               Omogućujemo unos, ažuriranje i brisanje podataka  o poslužiteljima na jednostavan
               način.
             </p>
+            <Link to="/serveri">
             <Button>Vidi više</Button>
+            </Link>
           </Col>
           <Col md={3} className='border rounded-3 shadow-sm py-5 '>
             <h3>Prikaz opreme</h3>
             <p>
                Unos izmjena i brisanje opreme iz baze podataka
             </p>
+            <Link to="/oprema">
             <Button>Vidi više</Button>
+            </Link>
           </Col>
           <Col md={3} className='border rounded-3 shadow-sm py-5'>
             <h3>Prikaz usluga</h3>
             <p>
             Unos izmjena i brisanje usluga iz baze podataka
             </p>
+            <Link to="/usluge">
             <Button>Vidi više</Button>
+            </Link>
           </Col>
         </Row>
 
-        <Row className="text-center justify-content-between mt-5">
+        <Row className="text-center justify-content-between mt-3">
           <Col md={3} className='border rounded-3 shadow-sm py-5'>
             <h3>Prikaz incidenata</h3>
             <p>
               Omogućujemo unos, ažuriranje i brisanje podataka  o incidentima na jednostavan
               način.
             </p>
+            <Link to="/incidenti">
             <Button>Vidi više</Button>
+            </Link>
           </Col>
           <Col md={3} className='border rounded-3 shadow-sm py-5 '>
             <h3>Prikaz računa prema klijentima</h3>
             <p>
                Unos izmjena i brisanje računa iz baze podataka
             </p>
+            <Link to="/">
             <Button>Vidi više</Button>
+            </Link>
           </Col>
           <Col md={3} className='border rounded-3 shadow-sm py-5'>
             <h3>Insert ideja</h3>
             <p>
            Lorem ipsum
             </p>
+            <Link to="/">
             <Button>Vidi više</Button>
+            </Link>
           </Col>
         </Row>
       </Container>
