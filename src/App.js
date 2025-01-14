@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Servers from './pages/Servers';
 import Services from './pages/Services';
 import SingleService from './pages/SingleService';
+import DeleteService from './pages/DeleteService';
 import Equipments from './pages/Equipment';
 import Incidents from './pages/Incidents';
 import NotFound from "./pages/NotFound";
@@ -23,6 +24,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/serveri' element={<Servers/>} />
           <Route path='/usluge' element={<Services/>} />
+          <Route path='/usluge/izbrisi/:id' element={<DeleteService/>}/>
           <Route path='/usluge/:id' element={<SingleService/>}/>
           <Route path='/oprema' element={<Equipments/>} />
           <Route path='/incidenti' element={<Incidents/>} />
