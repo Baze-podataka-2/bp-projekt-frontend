@@ -31,11 +31,12 @@ const Header = () => {
               <NavDropdown.Item>Usluge klijenata</NavDropdown.Item>
               <NavDropdown.Item>Racuni prema klijentima</NavDropdown.Item>
             </NavDropdown>
-            
+            <NavDropdown title="Oprema">
+              <NavDropdown.Item><Link as={Link} to={'oprema'} style={{textDecoration:'none', color:'#212529'}}>Skladiste opreme</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link as={Link} to={'konfiguracija'} style={{textDecoration:'none', color:'#212529'}}>Konfiguracija uređaja</Link></NavDropdown.Item>
+            </NavDropdown>`
             <Nav.Link as={Link} to={'serveri'}>Serveri</Nav.Link>
             <Nav.Link as={Link} to={'incidenti'} href="">Incidenti</Nav.Link>
-            <Nav.Link as={Link} to={'oprema'} href="">Oprema</Nav.Link>
-
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -45,3 +46,12 @@ const Header = () => {
 }
 
 export default Header
+
+/* 
+Ideja za navbar te opcentio stranice i komponente
+Neka je svaki item u navbaru zapravo dropdown koji vodi na substranice povezane sa dropdown nazivom
+Pa bi tako bio u mom slucaju Oprema bio glavni: Pa potom skladiste opreme i konfiguracija uredaja
+Te bi se na tim stranicama radile CRUD opreacije te iscitavali ili dohvacali neki podaci iz querya(mada je to opet CRUD operacija samo dajem primjer)
+
+Potom bi mogao biti Server kao glavni te u dropdownima 
+*/

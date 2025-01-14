@@ -11,6 +11,7 @@ import Services from './pages/Services';
 import SingleService from './pages/SingleService';
 import DeleteService from './pages/DeleteService';
 import Equipments from './pages/Equipment';
+import Configuration from './pages/DeviceConfiguration';
 import Incidents from './pages/Incidents';
 import NotFound from "./pages/NotFound";
 
@@ -27,6 +28,7 @@ const App = () => {
           <Route path='/usluge/izbrisi/:id' element={<DeleteService/>}/>
           <Route path='/usluge/:id' element={<SingleService/>}/>
           <Route path='/oprema' element={<Equipments/>} />
+          <Route path='/konfiguracija' element={<Configuration/>} />
           <Route path='/incidenti' element={<Incidents/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
