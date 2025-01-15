@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import Servers from './pages/Servers';
+import SingleServer from "./pages/SingleServer"
 import Services from './pages/Services';
 import SingleService from './pages/SingleService';
 import DeleteService from './pages/DeleteService';
@@ -24,6 +25,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/serveri' element={<Servers/>} />
+          <Route path='/serveri/:id' element={<SingleServer/>} />
           <Route path='/usluge' element={<Services/>} />
           <Route path='/usluge/izbrisi/:id' element={<DeleteService/>}/>
           <Route path='/usluge/:id' element={<SingleService/>}/>
