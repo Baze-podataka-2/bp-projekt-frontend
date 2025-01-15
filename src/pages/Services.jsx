@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion';
 import axios from 'axios';
-import { BiTrash, BiEdit, BiBookOpen } from "react-icons/bi";
+import { BiTrash, BiEdit, BiBookOpen, BiPlus} from "react-icons/bi";
 import { Link } from "react-router-dom"
 import DeleteService from "./DeleteService";
-
+import CreateService from "./CreateService";
 const Services = () => {
 
   const [usluge, setUsluge] = useState([]);
 
+  // To open delete service modal
   const [showModal, setShowModal] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
   const handleCloseModal = () => setShowModal(false);
@@ -18,6 +19,11 @@ const Services = () => {
     setSelectedId(id); 
     setShowModal(true); 
   };
+
+  // For opening "new service" modal
+  const [showSModal, setShowSModal] = useState(false);
+  const handleCloseSModal = () => setShowSModal(false);
+  const handleOpenSModal = ()=> setShowSModal(true)
 
   useEffect(() => {
 
@@ -36,6 +42,12 @@ const Services = () => {
         <Container>
           {showModal && <DeleteService show={showModal} onHide={handleCloseModal} id={selectedId} />}
         </Container>
+        <Container>
+          {showSModal && <CreateService show={showModal} onHide={handleCloseSModal}/>}
+        </Container>
+        <Container className="text-end">
+        <Button onClick={handleOpenSModal}><BiPlus />Dodaj</Button>
+      </Container>
         <Accordion defaultActiveKey="0" >
           <Accordion.Item eventKey="0">
             <Accordion.Header>Popis usluga</Accordion.Header>
