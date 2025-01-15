@@ -35,7 +35,13 @@ const Header = () => {
               <NavDropdown.Item><Link as={Link} to={'oprema'} style={{textDecoration:'none', color:'#212529'}}>Skladiste opreme</Link></NavDropdown.Item>
               <NavDropdown.Item><Link as={Link} to={'konfiguracija'} style={{textDecoration:'none', color:'#212529'}}>Konfiguracija uređaja</Link></NavDropdown.Item>
             </NavDropdown>`
-            <Nav.Link as={Link} to={'serveri'}>Serveri</Nav.Link>
+            
+
+
+            <NavDropdown title="Server">
+              <NavDropdown.Item><Link as={Link} to={'serveri'} style={{textDecoration:'none', color:'#212529'}}>Prikaz servera</Link></NavDropdown.Item>
+              <NavDropdown.Item> <Link as={Link} to={'logovi'} style={{textDecoration:'none', color:'#212529'}}>Prikaz logova</Link></NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link as={Link} to={'incidenti'} href="">Incidenti</Nav.Link>
           </Nav>
         </Navbar.Collapse>
