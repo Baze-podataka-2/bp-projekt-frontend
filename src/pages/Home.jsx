@@ -89,11 +89,11 @@ const Home = () => {
             </Link>
           </Col>
           <Col md={3} className='border rounded-3 shadow-sm py-5'>
-            <h3>Insert ideja</h3>
+            <h3>Logovi</h3>
             <p>
-           Lorem ipsum
+           Ovdije se mogu pregledati logvi koje je određeni korisnik kreirao
             </p>
-            <Link to="/">
+            <Link to="/logovi">
             <Button>Vidi više</Button>
             </Link>
           </Col>
