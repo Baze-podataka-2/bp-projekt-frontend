@@ -43,6 +43,7 @@ const Header = () => {
               <NavDropdown.Item> <Link as={Link} to={'logovi'} style={{textDecoration:'none', color:'#212529'}}>Prikaz logova</Link></NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to={'incidenti'} href="">Incidenti</Nav.Link>
+            <Nav.Link as={Link} to={'snapshots'} href="">Database Snapshot</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

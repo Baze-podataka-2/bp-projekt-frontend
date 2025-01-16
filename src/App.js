@@ -17,6 +17,7 @@ import Configuration from './pages/DeviceConfiguration';
 import Incidents from './pages/Incidents';
 import NotFound from "./pages/NotFound";
 import Logs from './pages/Logs';
+import Snapshots from './pages/Snapshots';
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
           <Route path='/konfiguracija' element={<Configuration/>} />
           <Route path='/incidenti' element={<Incidents/>} />
           <Route path = '/logovi'  element={<Logs/>}/>
+          <Route path = '/snapshots'  element={<Snapshots/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer/>
