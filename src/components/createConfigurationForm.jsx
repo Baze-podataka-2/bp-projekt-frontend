@@ -173,7 +173,7 @@ const ConfigurationForm = () => {
               }}
               placeholder="Dimenzije"
               ></input>
-              <input
+              <input className="ms-1"
               onChange={(e) => {
                 setPdu(e.target.value)
               }}
@@ -199,17 +199,20 @@ const ConfigurationForm = () => {
                 setHladenje(e.target.value)
               }}
               placeholder="Hladenje"></input>
-              <input className="mt-3 d-inline"
+              <div>
+              <input className="mt-3"
               onChange={(e) => {
                 setPreklopink(e.target.value)
               }}
               placeholder="Switch"></input>
-            </div>         
-            <input className="mt-3 d-inline"
+              <input className="mt-3 ms-2"
               onChange={(e) => {
                 setRouter(e.target.value)
               }}
               placeholder="Router"></input>
+              </div>
+
+            </div>         
           </div>
         )
       }
