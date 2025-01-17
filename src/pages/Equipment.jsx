@@ -5,9 +5,11 @@ import Accordion from 'react-bootstrap/Accordion';
 import Table from 'react-bootstrap/Table';
 import GetSingleEquipment from "../components/getSingleEquipment";
 
+
 const Equipments = () => {
 
   const [oprema, setOprema] = useState([]);
+
 
   useEffect(() => {
     axios.get('/oprema')
@@ -15,7 +17,6 @@ const Equipments = () => {
       setOprema(response.data)
     });
   }, [])
-
 
 
   return(

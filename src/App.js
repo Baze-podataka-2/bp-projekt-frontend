@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 
+
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -18,6 +20,7 @@ import Incidents from './pages/Incidents';
 import NotFound from "./pages/NotFound";
 import Logs from './pages/Logs';
 import Snapshots from './pages/Snapshots';
+import Employees from './pages/Employees';
 
 
 const App = () => {
@@ -38,6 +41,7 @@ const App = () => {
           <Route path='/incidenti' element={<Incidents/>} />
           <Route path = '/logovi'  element={<Logs/>}/>
           <Route path = '/snapshots'  element={<Snapshots/>}/>
+          <Route path = '/zaposlenici'  element={<Employees/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer/>
