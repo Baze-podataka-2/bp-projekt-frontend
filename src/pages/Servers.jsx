@@ -11,14 +11,22 @@ import { Link } from "react-router-dom"
 import CreateServer from "./CreateServer";
 import serverPicture from "../images/singleServer.webp"
 import { ToastContainer, toast } from 'react-toastify';
+import DeleteServer from "../components/DeleteServer";
 const Servers = () => {
 
   const [input, setInput] = useState("");
   const [singleServer, setSingleServer] = useState({})
+  const [showDModal, setShowDModal] = useState(false);
   const [server, setServer] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => setShowModal(false);
   const handleOpenModal = () => setShowModal(true);
+ const [selectedId, setSelectedId] = useState(null);
+  const handleCloseDModal = () => setShowDModal(false);
+  const handleOpenDModal = (id) => {
+    setSelectedId(id); 
+    setShowDModal(true); 
+  };
 
   const getSingleServer = () => {
 
@@ -57,6 +65,11 @@ const Servers = () => {
       <Container>
         {showModal && <CreateServer show={showModal} onHide={handleCloseModal} />}
       </Container>
+
+      <Container>
+        {showDModal && <DeleteServer show={showDModal} onHide={handleCloseDModal} id={selectedId} />}
+      </Container>
+      
       <h1>Serveri</h1>
 
       <InputGroup size="lg" className="mb-3 mt-4">
@@ -98,7 +111,7 @@ const Servers = () => {
             </Col>
             <Col md={3}>
 
-              <BiTrash style={{ fontSize: "20px", color: "red", marginRight: "10px", cursor: "pointer" }} />
+              <BiTrash  onClick={() => handleOpenDModal(srv.id_posluzitelj)} style={{ fontSize: "20px", color: "red", marginRight: "10px", cursor: "pointer" }} />
 
               <Link to={`/serveri/${srv.id_posluzitelj}`} style={{ pointerEvents: "auto" }}>
                 <BiBookOpen style={{ fontSize: "20px", color: "black" }} />
