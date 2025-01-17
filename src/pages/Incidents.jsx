@@ -53,17 +53,12 @@ const Incidents = () => {
       incidents.map((incident) => (
 
         <Row key={incident.id_incidenta} className="border border-secondary rounded shadow-sm py-2 my-2" >
-          <Col md={8}>
+          <Col md={9}>
             Datum- {incident.datum} - Opis - {incident.opis} - Stauts . {incident.status}
           </Col>
-          <Col md={4}>
-
-           
-             <BiTrash onClick={() => handleOpenDModal(incident.id_incidenta)}  style={{ fontSize: "20px", color: "red", marginRight: "10px", cursor: "pointer"}} />
+          <Col md={3}>
+            <BiTrash onClick={() => handleOpenDModal(incident.id_incidenta)}  style={{ fontSize: "20px", color: "red", marginRight: "10px", cursor: "pointer"}} />
             <BiEdit style={{ fontSize: "20px", color: "black", marginRight: "10px" }} />
-            <Link to={`/serveri/${incident.id_incidenta}`} style={{ pointerEvents: "auto" }}>
-              <BiBookOpen style={{ fontSize: "20px", color: "black" }} />
-            </Link>
           </Col>
         </Row>
       ))
