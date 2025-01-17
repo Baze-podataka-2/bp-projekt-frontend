@@ -55,14 +55,13 @@ const Services = () => {
               <ul>
                 {usluge.map((item) =>
                   <Row key={item.id_usluga} className="border border-secondary rounded shadow-sm py-2 my-2" >
-                    <Col md={8}>
+                    <Col md={9}>
                       Vrsta usluge - {item.vrsta} - Cijena usluge - {item.cijena}
                     </Col>
-                    <Col md={4}>
+                    <Col md={3}>
                    
                       <BiTrash onClick={() => handleOpenModal(item.id_usluga)}  style={{ fontSize: "20px", color: "red", marginRight: "10px", cursor: "pointer"}} />
                      
-                      <BiEdit style={{ fontSize: "20px", color: "black", marginRight: "10px" }} />
                       <Link to={`/usluge/${item.id_usluga}`} style={{ pointerEvents: "auto" }}>
                         <BiBookOpen style={{ fontSize: "20px", color: "black" }} />
                       </Link>
