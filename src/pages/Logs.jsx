@@ -28,17 +28,8 @@ const Logs = () => {
       logovi.map((log) => (
 
         <Row key={log.id_log} className="border border-secondary rounded shadow-sm py-2 my-2" >
-          <Col md={8}>
+          <Col md={12}>
             Akcija- {log.akcija} - datum- {log.datum} - korisnik - {log.user}
-          </Col>
-          <Col md={4}>
-
-            <BiTrash style={{ fontSize: "20px", color: "red", marginRight: "10px", cursor: "pointer" }} />
-
-            <BiEdit style={{ fontSize: "20px", color: "black", marginRight: "10px" }} />
-           
-              <BiBookOpen style={{ fontSize: "20px", color: "black" }} />
-            
           </Col>
         </Row>
 

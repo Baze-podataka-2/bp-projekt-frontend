@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import Ract, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
