@@ -3,10 +3,18 @@ import axios from "axios"
 import { Container, Button, Row, Col } from "react-bootstrap";
 import { BiTrash, BiEdit, BiBookOpen, BiPlus } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import DeleteIncident from "../components/DeleteIncident"
 
 const Incidents = () => {
 
   const [incidents, setIncidents] = useState(null)
+  const [showDModal, setShowDModal] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
+  const handleCloseDModal = () => setShowDModal(false);
+  const handleOpenDModal = (id) => {
+    setSelectedId(id); 
+    setShowDModal(true); 
+  };
 
   useEffect(() => {
 
@@ -23,6 +31,10 @@ const Incidents = () => {
 
   return (
     <Container>
+
+      <Container>
+        {showDModal && <DeleteIncident show={showDModal} onHide={handleCloseDModal} id={selectedId} />}
+      </Container>
    
     <h1>Incidenti</h1>
     <Container className="text-end">
@@ -38,8 +50,8 @@ const Incidents = () => {
           </Col>
           <Col md={4}>
 
-            <BiTrash style={{ fontSize: "20px", color: "red", marginRight: "10px", cursor: "pointer" }} />
-
+           
+             <BiTrash onClick={() => handleOpenDModal(incident.id_incidenta)}  style={{ fontSize: "20px", color: "red", marginRight: "10px", cursor: "pointer"}} />
             <BiEdit style={{ fontSize: "20px", color: "black", marginRight: "10px" }} />
             <Link to={`/serveri/${incident.id_incidenta}`} style={{ pointerEvents: "auto" }}>
               <BiBookOpen style={{ fontSize: "20px", color: "black" }} />
