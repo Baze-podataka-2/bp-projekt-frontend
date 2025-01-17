@@ -205,7 +205,7 @@ const ConfigurationForm = () => {
                 setPreklopink(e.target.value)
               }}
               placeholder="Switch"></input>
-              <input className="mt-3 ms-2"
+              <input className="mt-3 custom-margin"
               onChange={(e) => {
                 setRouter(e.target.value)
               }}

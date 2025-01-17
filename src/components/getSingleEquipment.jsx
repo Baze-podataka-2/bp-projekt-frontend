@@ -8,6 +8,8 @@ const GetSingleEquipment = () => {
   const [singleOprema, setSingleOprema] = useState({});
   const [input, setInput] = useState('');
 
+
+
   const fetchSingleEquipment = () => {
     if (!input) {
       toast.error("Molimo unesite ID opreme!");
@@ -49,7 +51,8 @@ const GetSingleEquipment = () => {
               <br />
               Stanje na zalihama: {singleOprema[0].stanje_na_zalihama}
             </Card.Text>
-            <Button variant="primary">Akcije</Button>
+            <Button
+            variant="primary">Akcije</Button>
           </Card.Body>
         </Card>
       )}
