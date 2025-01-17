@@ -1,14 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, InputGroup } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion';
 import Table from 'react-bootstrap/Table';
 import GetSingleEquipment from "../components/getSingleEquipment";
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 
 const Equipments = () => {
 
   const [oprema, setOprema] = useState([]);
+  const [popularnaOprema, setPopularnaOprema] = useState({});
 
 
   useEffect(() => {
@@ -17,6 +20,14 @@ const Equipments = () => {
       setOprema(response.data)
     });
   }, [])
+
+
+  const fetchPopularnaOprema = () => {
+    axios.get('/oprema/popularna')
+      .then((response) => {
+        setPopularnaOprema(response.data);
+      })
+  }
 
 
   return(
@@ -55,7 +66,29 @@ const Equipments = () => {
       </Accordion>
     </Container>
     <Container>
-      <GetSingleEquipment></GetSingleEquipment>
+    <Row>
+        <Col><GetSingleEquipment></GetSingleEquipment></Col>
+        <Col><h2 className="mt-4">Prikaži najpopularniju opremu</h2>
+        <InputGroup size="lg" className="mb-3 mt-4">
+          <Button onClick={fetchPopularnaOprema}>Prikaži</Button>
+        </InputGroup>
+        {
+          popularnaOprema[0] && popularnaOprema[0].id && (
+            <div>
+              <Card style={{ width: '18rem' }} className="mt-3">
+        <Card.Img variant="top" src="https://engineering.fb.com/wp-content/uploads/2018/05/data-center-shot.jpg" />
+        <Card.Body>
+        <Card.Title><strong>ID opreme: </strong> {popularnaOprema[0].id}</Card.Title>
+          <Card.Text>
+            <strong>Naziv opreme: </strong> {popularnaOprema[0].naziv_opreme} <br/>
+            <strong>Broj njezinog korištenja: </strong> {popularnaOprema[0].broj_koristenja} <br/>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+            </div>
+          )
+        }</Col>
+      </Row>
     </Container>
     </>
   )
