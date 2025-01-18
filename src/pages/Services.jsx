@@ -56,7 +56,7 @@ const Services = () => {
                 {usluge.map((item) =>
                   <Row key={item.id_usluga} className="border border-secondary rounded shadow-sm py-2 my-2" >
                     <Col md={9}>
-                      Vrsta usluge - {item.vrsta} - Cijena usluge - {item.cijena}
+                      Id usluge - {item.id_usluga} - Vrsta usluge - {item.vrsta} - Cijena usluge - {item.cijena}
                     </Col>
                     <Col md={3}>
                    
