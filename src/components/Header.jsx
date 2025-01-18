@@ -41,6 +41,7 @@ const Header = () => {
             <NavDropdown title="Server">
               <NavDropdown.Item><Link as={Link} to={'serveri'} style={{textDecoration:'none', color:'#212529'}}>Prikaz servera</Link></NavDropdown.Item>
               <NavDropdown.Item> <Link as={Link} to={'logovi'} style={{textDecoration:'none', color:'#212529'}}>Prikaz logova</Link></NavDropdown.Item>
+              <NavDropdown.Item> <Link as={Link} to={'/statistika-servera'} style={{textDecoration:'none', color:'#212529'}}>Statistika</Link></NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown title="Zaposlenici">
