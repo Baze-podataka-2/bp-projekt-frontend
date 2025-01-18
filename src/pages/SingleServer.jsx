@@ -29,7 +29,7 @@ const SingleService = () => {
     return (
         <Container className="text-center border border-1 rounded py-5 mt-5">
 
-            <h1> Usluga {server[0].kategorija}</h1>
+            <h1>Vrsta: {server[0].kategorija}</h1>
             <p> Naziv posluzitelja: {server[0].naziv}</p>
             <p> Rack: {server[0].id_rack}</p>
 
