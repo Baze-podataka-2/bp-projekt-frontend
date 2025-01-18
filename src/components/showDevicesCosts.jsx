@@ -16,6 +16,8 @@ const ShowCosts = () => {
   const[potrosnjaDoSada, setPotrosnjaDoSada] = useState({});
   const[potrosnjaMjeseci, setPotrosnjaMjeseci] = useState([]);
   const[potrosnjaMjesec, setPotrosnjaMjesec] = useState({});
+  const [showSingleMonth, setSingleMonth] = useState(false);
+  const [mjesecInput, setHandleInput] = useState('');
 
 
   useEffect(() => {
@@ -29,6 +31,7 @@ const ShowCosts = () => {
     axios.get('/potrosnja/trenutno')
       .then((response) => {
         setPotrosnjaDoSada(response.data);
+
       })
   }
 
@@ -43,10 +46,21 @@ const ShowCosts = () => {
   }
 
   const fetchZaMjesec = () => {
-    axios.get('/potrosnja/mjesec')
+    const mjesec = mjesecInput;
+    axios.get(`/potrosnja/mjesec?mjesec=${mjesec}`)
       .then((response) => {
+        console.log(response.data)
         setPotrosnjaMjesec(response.data)
       })
+  }
+
+  const handleSingleMonth = () => {
+    setSingleMonth(true);
+  }
+
+  const handleInput = (e) => {
+    setHandleInput(e.target.value)
+    console.log(mjesecInput)
   }
 
 
@@ -102,8 +116,31 @@ const ShowCosts = () => {
        <h4 className="mt-5">Pregledaj ukupne troškove po mjesecima</h4>
        <Button
        className=""
-        onClick={fetchZaSveMjesece}
+        onClick={() => {
+          fetchZaSveMjesece();
+          setSingleMonth(false);
+        }}
        variant="primary">Izlistaj za sve mjesece</Button>
+         <Button
+       className="ms-4"
+        onClick={handleSingleMonth}
+       variant="primary">Izlistaj za pojedini mjesec</Button>
+       {
+        showSingleMonth && (
+          <>
+          <input className="ms-3"
+          placeholder="Mjesec"
+          onChange={handleInput}
+          >
+          </input>
+          <Button className="ms-3"
+          onClick={fetchZaMjesec}
+          >
+            Dohvati
+          </Button>
+          </>
+        )
+       }
        {
         potrosnjaMjeseci.length > 0 && (
           <>
@@ -128,6 +165,31 @@ const ShowCosts = () => {
           </>
         )
        }
+       {
+        potrosnjaMjesec[0] && (
+          <>
+           <Table className="mt-3" striped bordered hover>
+        <thead>
+          <tr>
+            <th>mjesec</th>
+            <th>godina</th>
+            <th>ukupno</th>
+          </tr>
+        </thead>
+        <tbody>
+        {potrosnjaMjesec.map((item, index) => (
+            <tr key={index}>
+              <td>{item.mjesec}</td>
+              <td>{item.godina}</td>
+              <td>{item.ukupna_potrosnja}</td>
+              </tr>
+          ))}
+          </tbody>
+    </Table>
+          </>
+        )
+       }
+       
       </Container>
     </>
   )
