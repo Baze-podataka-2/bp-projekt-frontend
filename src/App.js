@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import Servers from './pages/Servers';
 import CreateServer from './pages/CreateServer';
 import SingleServer from "./pages/SingleServer"
+import ServerStats from './pages/ServerStats';
 import Services from './pages/Services';
 import SingleService from './pages/SingleService';
 import DeleteService from './pages/DeleteService';
@@ -32,6 +33,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/serveri' element={<Servers/>} />
+          <Route path='/statistika-servera' element={<ServerStats/>} />
           <Route path='/serveri/kreiraj' element={<CreateServer/>}/>
           <Route path='/serveri/:id' element={<SingleServer/>} />
           <Route path='/usluge' element={<Services/>} />
