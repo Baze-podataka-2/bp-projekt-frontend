@@ -72,7 +72,7 @@ const ConfigurationForm = () => {
     <Form>
       <Form.Group className="mb-3" controlId="formSelectDevice">
         <Form.Select value={device} onChange={handleInput} aria-label="Default select example">
-          <option>Odaberite uredaj</option>
+          <option>Odaberite uređaj</option>
           <option value="1">Poslužitelj</option>
           <option value="2">Standardni rack</option>
           <option value="3">Mrežni rack</option>

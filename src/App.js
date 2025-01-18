@@ -21,7 +21,7 @@ import NotFound from "./pages/NotFound";
 import Logs from './pages/Logs';
 import Snapshots from './pages/Snapshots';
 import Employees from './pages/Employees';
-
+import TrackDevicesStatus from './pages/DevicesStatus';
 
 const App = () => {
   return (
@@ -42,6 +42,7 @@ const App = () => {
           <Route path = '/logovi'  element={<Logs/>}/>
           <Route path = '/snapshots'  element={<Snapshots/>}/>
           <Route path = '/zaposlenici'  element={<Employees/>}/>
+          <Route path = '/statusi'  element={<TrackDevicesStatus/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer/>
