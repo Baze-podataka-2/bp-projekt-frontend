@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Container, Button, Row, Col, Modal } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form';
-const UpdateService = ({ show, onHide, idU}) => {
+const UpdateService = ({ show, onHide}) => {
 
     const [id_klijent, setId_klijent] = useState('');
     const [id_usluga, setId_usluga] = useState('');
@@ -21,7 +21,7 @@ const UpdateService = ({ show, onHide, idU}) => {
            id_usluga
         };
     
-        axios.('http://localhost:8080/klijenti/' + idU, data)
+        axios.get('http://localhost:8080/klijenti/', data)
           .then(() => {
             navigate("/klijenti")
           })
@@ -36,7 +36,7 @@ const UpdateService = ({ show, onHide, idU}) => {
         aria-labelledby="contained-modal-title-vcenter"
         centered      
       >
-        <Modal.Header closeButton onClick={hideModal} className='text-center align-items-center'><h1 className="mb-0">Ured Incident {idU}</h1></Modal.Header>
+        <Modal.Header closeButton onClick={hideModal} className='text-center align-items-center'><h1 className="mb-0">Promjeni paket usluge</h1></Modal.Header>
         <Container className='py-3'>
           <Row className="justify-content-center mt-4 text-center w-100">
             <Col>
