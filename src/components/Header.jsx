@@ -28,7 +28,7 @@ const Header = () => {
           <Nav className="me-auto">
             <NavDropdown title="Klijenti">
               <NavDropdown.Item><Link as={Link} to={'usluge'} style={{textDecoration:'none', color:'#212529'}}>Usluge</Link></NavDropdown.Item>
-              <NavDropdown.Item>Usluge klijenata</NavDropdown.Item>
+              <NavDropdown.Item><Link as={Link} to={'klijenti'} style={{textDecoration:'none', color:'#212529'}}>Usluge klijenata</Link></NavDropdown.Item>
               <NavDropdown.Item>Racuni prema klijentima</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Oprema">

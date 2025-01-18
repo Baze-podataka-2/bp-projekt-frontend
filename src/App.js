@@ -24,6 +24,7 @@ import Snapshots from './pages/Snapshots';
 import Employees from './pages/Employees';
 import TrackDevicesStatus from './pages/DevicesStatus';
 import DeviceGeneratedCosts from './pages/GeneratedCosts';
+import ClientsServices from './pages/ClientsAndServices';
 
 const App = () => {
   return (
@@ -47,6 +48,7 @@ const App = () => {
           <Route path = '/zaposlenici'  element={<Employees/>}/>
           <Route path = '/statusi'  element={<TrackDevicesStatus/>}/>
           <Route path = '/troskovi'  element={<DeviceGeneratedCosts/>}/>
+          <Route path = '/klijenti'  element={<ClientsServices/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer/>
