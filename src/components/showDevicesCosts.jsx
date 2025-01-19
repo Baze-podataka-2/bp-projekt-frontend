@@ -106,7 +106,10 @@ const ShowCosts = () => {
           <Card.Title>Trošak za {potrosnjaDoSada.dan}.{potrosnjaDoSada.mjesec}</Card.Title>
           <Card.Text>
             Iznosi <br/>
-            <strong>{potrosnjaDoSada.trosakDoSada} kW</strong>
+            {
+            potrosnjaDoSada?.trosakDoSada >= 1000
+      ? (potrosnjaDoSada.trosakDoSada / 1000) + ' kWh'
+      : potrosnjaDoSada?.trosakDoSada + ' W'}
           </Card.Text>
         </Card.Body>
       </Card>
