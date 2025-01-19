@@ -49,10 +49,12 @@ const Header = () => {
             </NavDropdown>
 
             <Nav.Link as={Link} to={'statusi'} href="">Praćenje statusa uređaja</Nav.Link>
+      
             <Nav.Link as={Link} to={'troskovi'} href="">Troškovi</Nav.Link>
 
+
             <Nav.Link as={Link} to={'incidenti'} href="">Incidenti</Nav.Link>
-            <Nav.Link as={Link} to={'snapshots'} href="">Database Snapshot</Nav.Link>
+            <Nav.Link as={Link} to={'licence'} href="">Licence</Nav.Link>
 
           </Nav>
         </Navbar.Collapse>

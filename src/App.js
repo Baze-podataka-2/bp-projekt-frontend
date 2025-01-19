@@ -26,6 +26,7 @@ import TrackDevicesStatus from './pages/DevicesStatus';
 import DeviceGeneratedCosts from './pages/GeneratedCosts';
 import ClientsServices from './pages/ClientsAndServices';
 import Totalincome from './pages/Totalincome';
+import ShowLicense from './pages/License';
 
 const App = () => {
   return (
@@ -51,6 +52,7 @@ const App = () => {
           <Route path = '/troskovi'  element={<DeviceGeneratedCosts/>}/>
           <Route path = '/klijenti'  element={<ClientsServices/>}/>
           <Route path='/ukupni-prihod' element={<Totalincome/>}/>
+          <Route path='/licence' element={<ShowLicense/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer/>
