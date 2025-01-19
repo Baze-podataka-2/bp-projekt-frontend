@@ -17,7 +17,7 @@ const ClientsServices = () => {
 
 
   useEffect(() => {
-    axios.get('/klijenti')
+    axios.get(/klijenti/)
       .then((response) => {
         console.log(response.data)
         setKlijenti(response.data)

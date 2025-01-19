@@ -15,20 +15,20 @@ const UpdateService = ({ show, onHide}) => {
         onHide();
       };
       
-      const handleEditData = () => {
-        const data = {
-           id_klijent,
-           id_usluga
-        };
-    
-        axios.get('http://localhost:8080/klijenti/', data)
-          .then(() => {
-            navigate("/klijenti")
-          })
-          .catch((error) => {
-            console.log(error)
+      const handleUpdate = async () => {
+        try {
+          const response = await axios.get('klijenti/azuriraj', {
+            params: {
+              id_klijent: id_klijent,
+              id_usluga: id_usluga,
+            },
           });
-      }
+          //setResponseMessage(response.data.message);
+        } catch (error) {
+          console.error('Greška:', error);
+          //setResponseMessage('Dogodila se greška prilikom ažuriranja usluge.');
+        }
+      };
 
     return (
         <Modal show={true} onHide={hideModal}
@@ -61,7 +61,7 @@ const UpdateService = ({ show, onHide}) => {
                 </Form.Group>
     
               </Form>
-              <Button variant="danger" className='mt-3 w-25' onClick={handleEditData}>Spremi</Button>
+              <Button variant="danger" className='mt-3 w-25' onClick={handleUpdate}>Spremi</Button>
               </Col>
     
           </Row>
