@@ -25,6 +25,7 @@ import Employees from './pages/Employees';
 import TrackDevicesStatus from './pages/DevicesStatus';
 import DeviceGeneratedCosts from './pages/GeneratedCosts';
 import ClientsServices from './pages/ClientsAndServices';
+import Totalincome from './pages/Totalincome';
 
 const App = () => {
   return (
@@ -49,6 +50,7 @@ const App = () => {
           <Route path = '/statusi'  element={<TrackDevicesStatus/>}/>
           <Route path = '/troskovi'  element={<DeviceGeneratedCosts/>}/>
           <Route path = '/klijenti'  element={<ClientsServices/>}/>
+          <Route path='/ukupni-prihod' element={<Totalincome/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer/>
