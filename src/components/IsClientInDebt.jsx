@@ -37,7 +37,7 @@ const ClientDebtStatus = () => {
 
   return(
     <>
-    <h4 className="mt-4">Saznaje da li je klijent u dugovanju</h4>
+    <h4 className="mt-4">Saznajte da li je klijent u dugovanju</h4>
     <InputGroup size="lg" className="mb-3 mt-4">
         <Form.Control
           value={id_klijent}
