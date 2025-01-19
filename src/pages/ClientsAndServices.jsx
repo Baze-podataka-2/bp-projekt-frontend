@@ -9,6 +9,8 @@ import { BiTrash, BiEdit, BiInfoCircle} from "react-icons/bi";
 import { Link } from "react-router-dom"
 import Form from "react-bootstrap/Form"
 import UpdateService from "../components/UpdateService";
+import ClientDebtStatus from "../components/IsClientInDebt";
+import ActiveClients from "../components/showActiveClients";
 
 const ClientsServices = () => {
   const [klijenti, setKlijenti] = useState([]);
@@ -67,12 +69,15 @@ const ClientsServices = () => {
           </Row>
         </Container>: null}
 
+        <ClientDebtStatus/>
+        <ActiveClients/>
+
         <Container>
           {showModal && <UpdateService show={showModal} onHide={handleCloseModal} />}
         </Container>
       </Container>
       <Container>
-        <Accordion defaultActiveKey="0">
+        <Accordion className="mt-5" defaultActiveKey="0">
           <Accordion.Item eventKey="0">
             <Accordion.Header>Usluge klijenata i status kredita</Accordion.Header>
             <Accordion.Body>
