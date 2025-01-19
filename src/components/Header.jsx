@@ -30,7 +30,7 @@ const Header = () => {
               <NavDropdown.Item><Link as={Link} to={'usluge'} style={{textDecoration:'none', color:'#212529'}}>Usluge</Link></NavDropdown.Item>
               <NavDropdown.Item><Link as={Link} to={'klijenti'} style={{textDecoration:'none', color:'#212529'}}>Usluge klijenata</Link></NavDropdown.Item>
               <NavDropdown.Item><Link as={Link} to={'ukupni-prihod'} style={{textDecoration:'none', color:'#212529'}}>Ukupni prihod usluge</Link></NavDropdown.Item>
-              <NavDropdown.Item>Racuni prema klijentima</NavDropdown.Item>
+
             </NavDropdown>
 
             <NavDropdown title="Oprema">

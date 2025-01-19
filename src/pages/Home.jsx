@@ -80,11 +80,11 @@ const Home = () => {
             </Link>
           </Col>
           <Col md={3} className='border rounded-3 shadow-sm py-5 '>
-            <h3>Prikaz računa prema klijentima</h3>
+            <h3>Prikaz usluga klijenata</h3>
             <p>
-               Unos izmjena i brisanje računa iz baze podataka
+               Pregled usluga i izmjena
             </p>
-            <Link to="/">
+            <Link to="/klijenti">
             <Button>Vidi više</Button>
             </Link>
           </Col>
